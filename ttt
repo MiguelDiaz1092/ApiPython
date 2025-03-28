@@ -1,0 +1,21 @@
+# Estructura de directorios
+# /app
+#   /models - Modelos de la base de datos
+#   /schemas - Esquemas Pydantic para validación
+#   /routes - Endpoints de la API
+#   /core - Configuración, seguridad, etc.
+#   /services - Lógica de negocio
+#   main.py - Punto de entrada
+
+
+
+
+
+
+
+
+
+
+
+
+
