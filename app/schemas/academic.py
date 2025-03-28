@@ -26,7 +26,7 @@ class Semester(SemesterBase):
     id: int
 
     class Config:
-        orm_mode = True
+      model_config = { "from_attributes": True }
 
 
 class SubjectBase(BaseModel):
@@ -52,7 +52,7 @@ class Subject(SubjectBase):
     id: int
 
     class Config:
-        orm_mode = True
+        model_config = { "from_attributes": True }
 
 
 class SubjectWithPrerequisites(Subject):
@@ -100,7 +100,7 @@ class Schedule(ScheduleBase):
     id: int
 
     class Config:
-        orm_mode = True
+        model_config = { "from_attributes": True }
 
 
 class ScheduleWithDetails(Schedule):
@@ -125,7 +125,7 @@ class Enrollment(EnrollmentBase):
     enrollment_date: datetime
 
     class Config:
-        orm_mode = True
+        model_config = { "from_attributes": True }
 
 
 class EnrollmentWithDetails(Enrollment):
@@ -169,7 +169,7 @@ class Grade(GradeBase):
     updated_at: datetime
 
     class Config:
-        orm_mode = True
+        model_config = { "from_attributes": True }
 
 
 class AcademicRecord(BaseModel):

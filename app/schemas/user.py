@@ -1,6 +1,6 @@
 # app/schemas/user.py
 from typing import Optional
-from pydantic import BaseModel, EmailStr, validator
+from pydantic import BaseModel, EmailStr
 from app.models.user import UserRole
 
 
@@ -27,22 +27,10 @@ class User(UserBase):
     is_active: bool
     is_admin: bool
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 
 class UserInDB(User):
     hashed_password: str
-
-# app/schemas/token.py
-from typing import Optional
-from pydantic import BaseModel
-
-
-class Token(BaseModel):
-    access_token: str
-    token_type: str
-
-
-class TokenData(BaseModel):
-    username: Optional[str] = None
